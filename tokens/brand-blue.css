@@ -1,0 +1,19 @@
+/* Sample Health — blue brand.
+   Remaps the brand ramp to the blue ramp so every component that references
+   --colors-brand-* (buttons, toggles, links, focus rings, charts, sliders,
+   featured icons, badges, …) renders in blue. Imported last in styles.css so
+   these declarations win the cascade over the original violet values. */
+:root{
+  --colors-brand-25: rgb(245,250,255);
+  --colors-brand-50: rgb(239,248,255);
+  --colors-brand-100: rgb(209,233,255);
+  --colors-brand-200: rgb(178,221,255);
+  --colors-brand-300: rgb(132,202,255);
+  --colors-brand-400: rgb(83,177,253);
+  --colors-brand-500: rgb(46,144,250);
+  --colors-brand-600: rgb(21,112,239);
+  --colors-brand-700: rgb(23,92,211);
+  --colors-brand-800: rgb(24,73,169);
+  --colors-brand-900: rgb(25,65,133);
+  --colors-brand-950: rgb(16,42,86);
+}

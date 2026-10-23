@@ -1,0 +1,209 @@
+/* Sample Health docs v2 — MDS theme token map styles.
+   Loaded after docs/theme.css; only adds, never overrides the original. */
+
+/* Token name chip (monospace, developer-facing) */
+.sh-mds { font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--colors-text-text-secondary-700);
+  background: var(--colors-background-bg-secondary); border: 1px solid var(--colors-border-border-secondary);
+  border-radius: 6px; padding: 2px 7px; display: inline-block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sh-mds.is-blank { color: var(--colors-text-text-quaternary-500); background: none; border-style: dashed; }
+.sh-mds-var { font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--colors-text-text-quaternary-500); word-break: break-all; }
+.sh-blank { font-size: 14px; font-weight: 400; color: var(--colors-text-text-quaternary-500); }
+
+/* Token column bolted onto the existing scale tables */
+.sh-scale-table.mds .sh-scale-head, .sh-scale-table.mds .sh-scale-row { grid-template-columns: minmax(0, 220px) minmax(0, 1fr); }
+.sh-scale-table.mds.has-vis .sh-scale-head, .sh-scale-table.mds.has-vis .sh-scale-row { grid-template-columns: minmax(0, 220px) minmax(0, 92px) minmax(0, 1fr); }
+.sh-scale-table.mds .sh-mds { white-space: normal; overflow-wrap: anywhere; }
+@media (max-width: 1080px) {
+  .sh-scale-table.mds.has-vis .sh-scale-head, .sh-scale-table.mds.has-vis .sh-scale-row { grid-template-columns: minmax(0, 170px) minmax(0, 68px) minmax(0, 1fr); gap: 12px; }
+  .sh-scale-table.mds .sh-scale-head, .sh-scale-table.mds .sh-scale-row { grid-template-columns: minmax(0, 170px) minmax(0, 1fr); gap: 12px; }
+}
+@media (max-width: 640px) {
+  .sh-scale-table.mds .sh-scale-head > :nth-child(2) { display: block; }
+  .sh-scale-table.mds .sh-scale-head > :nth-child(3), .sh-scale-table.mds .sh-scale-row > .sh-scale-rem { display: none; }
+  .sh-scale-table.mds .sh-scale-head, .sh-scale-table.mds .sh-scale-row { grid-template-columns: minmax(0, var(--name-col)) minmax(0, 104px) minmax(0, 52px) minmax(0, 1fr); gap: 10px; }
+}
+
+/* Swatch token caption on the Colors page */
+.sh-swatch-token { margin-top: 5px; }
+.sh-swatch-token .sh-mds { white-space: normal; overflow-wrap: anywhere; }
+
+/* Type table: token name leads, then the specimen and its spec */
+.sh-type-table.mds .sh-type-head, .sh-type-table.mds .sh-type-row { grid-template-columns: 210px minmax(0, 1fr) 300px; }
+@media (max-width: 1080px) { .sh-type-table.mds .sh-type-head, .sh-type-table.mds .sh-type-row { grid-template-columns: 170px minmax(0, 1fr) 210px; } }
+@media (max-width: 760px) { .sh-type-table.mds .sh-type-head, .sh-type-table.mds .sh-type-row { grid-template-columns: minmax(0, 1fr); gap: 8px; } }
+
+/* Shadow cards get a token caption */
+.sh-shadow-card { flex-direction: column; gap: 6px; }
+
+/* Shadows as a table: token / CSS value / preview */
+.sh-scale-table.shadow .sh-scale-head, .sh-scale-table.shadow .sh-scale-row { grid-template-columns: minmax(0, 220px) minmax(0, 1fr) minmax(0, 240px); }
+.sh-scale-table.shadow .sh-scale-row { padding-block: 32px; min-height: 128px; }
+.sh-scale-table.shadow .sh-scale-vis { overflow: visible; display: flex; justify-content: center; }
+.sh-scale-table.shadow .sh-scale-row:hover { background: none; }
+.sh-shadow-value { line-height: 18px; word-break: normal; overflow-wrap: anywhere; }
+.sh-shadow-chip { width: 96px; height: 56px; border-radius: var(--radius-lg-px); background: var(--colors-background-bg-primary); border: 1px solid var(--colors-border-border-secondary); }
+@media (max-width: 1080px) {
+  .sh-scale-table.shadow .sh-scale-head, .sh-scale-table.shadow .sh-scale-row { grid-template-columns: minmax(0, 170px) minmax(0, 1fr) minmax(0, 200px); gap: 12px; }
+  .sh-shadow-chip { width: 88px; height: 48px; }
+}
+@media (max-width: 640px) {
+  .sh-scale-table.shadow .sh-scale-head, .sh-scale-table.shadow .sh-scale-row { grid-template-columns: minmax(0, 1fr) minmax(0, 140px); }
+  .sh-scale-table.shadow .sh-scale-head > :nth-child(2), .sh-scale-table.shadow .sh-scale-row > .sh-shadow-value { display: none; }
+}
+
+/* ---------- Foundations tables: card shell ----------
+   Rounded bordered card, gray sticky column-header row, hover rows.
+   overflow: clip (not hidden) so the sticky header still sticks. */
+.sh-type-table, .sh-scale-table, .sh-tok { border-top: 0; margin-top: 8px; background: var(--colors-background-bg-primary);
+  border: 1px solid var(--colors-border-border-secondary); border-radius: var(--radius-xl-px);
+  box-shadow: 0 1px 2px var(--colors-effects-shadows-shadow-xs); overflow: clip; }
+.sh-type-head, .sh-scale-head, .sh-tok-head { padding: 12px 24px; background: var(--colors-background-bg-secondary);
+  border-bottom: 1px solid var(--colors-border-border-secondary); font-size: 14px; line-height: 20px; font-weight: 600;
+  color: var(--colors-text-text-tertiary-600); position: sticky; top: 0; z-index: 2; }
+.sh-type-row { padding: 24px; }
+.sh-scale-row { padding: 12px 24px; }
+.sh-type-row, .sh-scale-row { border-bottom: 1px solid var(--colors-border-border-secondary); }
+.sh-type-row:hover, .sh-scale-row:hover { background: var(--colors-background-bg-secondary-subtle); }
+.sh-type-table > :last-child, .sh-scale-table > :last-child, .sh-tok > :last-child { border-bottom: 0; }
+@media (max-width: 640px) { .sh-type-head, .sh-scale-head, .sh-type-row, .sh-scale-row, .sh-tok-head, .sh-tok-row { padding-inline: 16px; } }
+
+/* ---------- Reference tables ---------- */
+.sh-tok-head, .sh-tok-row { display: grid; gap: 20px; align-items: center; padding: 12px 24px; }
+.sh-tok-head { background: var(--colors-background-bg-secondary); border-bottom: 1px solid var(--colors-border-border-secondary);
+  font-size: 14px; line-height: 20px; font-weight: 600; position: sticky; top: 0; z-index: 2; }
+.sh-tok-row { border-bottom: 1px solid var(--colors-border-border-secondary); min-height: 54px; }
+.sh-tok-row:hover { background: var(--colors-background-bg-secondary-subtle); }
+.sh-tok-name { font-size: 14px; font-weight: 400; color: var(--colors-text-text-tertiary-600); }
+.sh-tok-val { font-size: 14px; font-weight: 400; color: var(--colors-text-text-primary-900); }
+.sh-tok-note { font-size: 12px; font-weight: 500; color: var(--colors-text-text-quaternary-500); text-wrap: pretty; }
+
+.sh-tok.color .sh-tok-head, .sh-tok.color .sh-tok-row { grid-template-columns: minmax(0, 2.2fr) minmax(0, 2.2fr); }
+.sh-tok.layout .sh-tok-head, .sh-tok.layout .sh-tok-row { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 2.2fr) minmax(0, 2.1fr); }
+.sh-tok.face .sh-tok-head, .sh-tok.face .sh-tok-row { grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr) minmax(0, 1.6fr); }
+.sh-tok.style .sh-tok-head, .sh-tok.style .sh-tok-row { grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.7fr) minmax(0, 2.3fr); }
+@media (max-width: 820px) {
+  .sh-tok-head { display: none; }
+  .sh-tok-row { grid-template-columns: minmax(0, 1fr) !important; gap: 8px; padding: 16px; }
+}
+
+.sh-tok .sh-mds { white-space: normal; overflow-wrap: anywhere; }
+.sh-tok-group { margin-top: 40px; }
+.sh-tok-group:first-child { margin-top: 0; }
+.sh-tok-group-label { display: flex; align-items: baseline; gap: 10px; font-size: 18px; font-weight: 600; color: var(--colors-text-text-primary-900); margin: 0 0 10px; }
+.sh-tok-group-label small { font-size: 12px; font-weight: 500; color: var(--colors-text-text-quaternary-500); }
+
+/* Colour cell */
+.sh-tok-color { display: flex; align-items: center; gap: 10px; }
+.sh-tok-dot { flex: 0 0 auto; width: 24px; height: 24px; border-radius: 6px; border: 1px solid var(--colors-border-border-secondary); }
+.sh-tok-hex { font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--colors-text-text-secondary-700); text-transform: uppercase; }
+
+/* Style preview cell */
+.sh-tok-sample { min-width: 0; overflow: hidden; color: var(--colors-text-text-primary-900); white-space: nowrap; text-overflow: ellipsis; }
+.sh-tok-spec { font-size: 12px; font-weight: 500; color: var(--colors-text-text-tertiary-600); }
+
+/* Warning / blank badges */
+.sh-badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+.sh-badge.warn { color: var(--colors-warning-700); background: var(--colors-warning-50); }
+.sh-badge.none { color: var(--colors-text-text-quaternary-500); background: var(--colors-background-bg-secondary); }
+.sh-badge.ok { color: var(--colors-success-700); background: var(--colors-success-50); }
+
+/* Filter bar */
+.sh-tok-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 20px; }
+.sh-tok-bar input { height: 40px; min-width: 260px; flex: 1 1 260px; padding: 0 14px; font: inherit; font-size: 14px; font-weight: 400;
+  color: var(--colors-text-text-primary-900); background: var(--colors-background-bg-primary);
+  border: 1px solid var(--colors-border-border-primary); border-radius: 8px; box-shadow: 0 1px 2px rgba(10,13,18,.05); }
+.sh-tok-bar input::placeholder { color: var(--colors-text-text-quaternary-500); }
+.sh-tok-bar input:focus { outline: none; border-color: var(--colors-brand-300); box-shadow: 0 0 0 4px var(--colors-brand-100); }
+.sh-seg { display: inline-flex; border: 1px solid var(--colors-border-border-primary); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(10,13,18,.05); }
+.sh-seg button { appearance: none; border: 0; background: var(--colors-background-bg-primary); font: inherit; font-size: 14px; font-weight: 400;
+  color: var(--colors-text-text-secondary-700); padding: 0 14px; height: 38px; cursor: pointer; }
+.sh-seg button + button { border-left: 1px solid var(--colors-border-border-primary); }
+.sh-seg button.is-on { background: var(--colors-brand-50); color: var(--colors-brand-700); font-weight: 700; }
+.sh-tok-count { font-size: 14px; font-weight: 400; color: var(--colors-text-text-quaternary-500); }
+
+/* Overview cards */
+.sh-tok-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-top: 4px; }
+.sh-tok-stat { padding: 18px; border: 1px solid var(--colors-border-border-secondary); border-radius: 12px; background: var(--colors-background-bg-primary); box-shadow: 0 1px 2px rgba(10,13,18,.05); }
+.sh-tok-stat b { display: block; font-size: 30px; font-weight: 600; color: var(--colors-text-text-primary-900); line-height: 1.2; }
+.sh-tok-stat span { display: block; margin-top: 4px; font-size: 14px; font-weight: 400; color: var(--colors-text-text-tertiary-600); }
+.sh-tok-stat em { display: block; margin-top: 8px; font-style: normal; font-size: 12px; font-weight: 500; color: var(--colors-text-text-quaternary-500); }
+
+/* Heading-scale option cards */
+.sh-opt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.sh-opt { text-align: left; font: inherit; padding: 18px; border: 1px solid var(--colors-border-border-primary); border-radius: 12px; cursor: pointer;
+  background: var(--colors-background-bg-primary); box-shadow: 0 1px 2px rgba(10,13,18,.05); transition: border-color .12s, box-shadow .12s; }
+.sh-opt:hover { border-color: var(--colors-brand-300); }
+.sh-opt.is-on { border-color: var(--colors-brand-500); box-shadow: 0 0 0 3px var(--colors-brand-100); }
+.sh-opt-title { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 600; color: var(--colors-text-text-primary-900); }
+.sh-opt-desc { margin: 8px 0 12px; font-size: 14px; font-weight: 400; line-height: 1.55; color: var(--colors-text-text-tertiary-600); text-wrap: pretty; }
+.sh-opt-map { display: grid; grid-template-columns: repeat(auto-fit, minmax(56px, 1fr)); gap: 6px; }
+.sh-opt-map span { font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--colors-text-text-secondary-700);
+  background: var(--colors-background-bg-secondary); border-radius: 5px; padding: 4px 0; text-align: center; }
+
+.sh-url { font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--colors-text-text-quaternary-500); word-break: break-all; }
+a { color: var(--colors-brand-600); }
+a:hover { color: var(--colors-brand-700); }
+
+/* Token added beyond the MDS sheet — warning glyph with a hover tooltip */
+.sh-added { display: inline-flex; align-items: center; color: var(--colors-warning-600, #dc6803); cursor: help; flex: 0 0 auto; }
+.sh-added svg { display: block; }
+
+/* Selection-control diagrams: hover and focus painted on the doc specimen only */
+.sh-field-hover [data-sh-part="field"] { background: var(--colors-background-bg-primary-hover) !important; }
+.sh-field-focus [data-sh-part="field"] { box-shadow: 0 0 6px 1px var(--colors-brand-50), inset 0 0 0 1px var(--colors-border-border-brand), 0 1px 2px 0 var(--colors-effects-shadows-shadow-xs) !important; }
+.sh-menu-hover [data-sh-part="item"] { background: var(--colors-background-bg-primary-hover) !important; }
+.sh-field-focus-error [data-sh-part="field"] { box-shadow: 0 0 6px 1px var(--colors-error-100), inset 0 0 0 1px var(--colors-border-border-error), 0 1px 2px 0 var(--colors-effects-shadows-shadow-xs) !important; }
+.sh-tm-spec { max-width: 100%; min-width: 0; }
+.sh-tm-spec label, .sh-tm-spec label > span { min-width: 0; }
+/* A long footnote must not widen the chip column and squeeze the specimen out */
+.sh-tm-notes { max-width: 280px; }
+.sh-tm { grid-template-columns: minmax(0, max-content) minmax(200px, 1fr); }
+.sh-sel-hover { border-color: var(--colors-brand-600) !important; background: var(--colors-brand-50) !important; }
+.sh-sel-focus { outline: 2px solid var(--colors-effects-focus-rings-focus-ring); outline-offset: 2px; }
+
+/* Toggle diagrams: hover and focus frozen on the doc specimen only */
+.sh-tog-hover [data-sh-part="track"] { background: var(--colors-background-bg-quaternary) !important; }
+.sh-tog-hover [data-sh-part="track-on"] { background: var(--colors-background-bg-brand-solid-hover) !important; }
+.sh-tog-focus [data-sh-part="track"] { box-shadow: 0 0 0 2px var(--colors-background-bg-primary), 0 0 0 4px var(--colors-brand-600) !important; }
+
+/* File upload diagrams: hover and drag-over frozen on the doc specimen only */.sh-fu-hover [data-sh-part="zone"] { background: var(--colors-background-bg-primary-hover) !important; }
+.sh-fu-drag [data-sh-part="zone"] { background: var(--colors-background-bg-brand-primary) !important; border-color: var(--colors-border-border-brand) !important; }
+
+/* Modal anatomy diagrams: the specimen renders flat — no scrim, no viewport,
+   no entry transition — so the connectors have a static panel to point at. */
+.sh-md-flat { background: var(--colors-background-bg-secondary); border: 1px solid var(--colors-border-border-secondary); border-radius: var(--radius-xl-px); padding: var(--spacing-3xl-px); box-sizing: border-box; }
+.sh-md-flat [data-sh-part="scrim"] { position: relative !important; inset: auto !important; z-index: auto !important; padding: 0 !important; background: transparent !important; opacity: 1 !important; }
+.sh-md-flat [data-sh-part="panel"] { transform: none !important; opacity: 1 !important; }
+
+/* Slider diagrams: the hover / focus / drag halo frozen on the doc specimen only */.sh-sld-lit [data-sh-part="handle"], .sh-sld-lit [data-sh-part="handle-end"] {
+  box-shadow: 0px 1px 2px 0px var(--colors-effects-shadows-shadow-sm-01), 0 0 6px 1px var(--colors-brand-50) !important; }
+
+/* ---------- Wide token maps (Tables, Alerts) + doc-only frozen states ---------- */
+.sh-tm-table .sh-tm { grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: var(--spacing-xl-px); }
+.sh-tm-table .sh-tm-chip { max-width: 100%; flex-wrap: wrap; }
+.sh-tm-table .sh-tm-name, .sh-tm-table .sh-tm-val { white-space: normal; overflow-wrap: anywhere; }
+.sh-tm-table .sh-tm-stage { display: block; overflow-x: auto; }
+.sh-tm-table .sh-tm-chips, .sh-tm-table .sh-tm-spec { margin-top: 0 !important; }
+.sh-tm-table .sh-tm-spec { display: block; width: 100%; }
+.sh-tm-table .sh-tm-notes { max-width: 100%; }
+/* Date pickers: the specimens are narrow next to a 220px chip column, so pin
+   them to the right edge of the stage rather than letting them crowd the chips. */
+.sh-tm-right .sh-tm-spec { display: flex; justify-content: flex-end; width: 100%; }
+/* A specimen with its own popover (the pagination records-per-page select) has
+   to escape the stage's horizontal scroller — overflow on one axis clips both. */
+.sh-tm-pop .sh-tm-stage { overflow: visible; }
+.sh-tbl-hover [data-sh-part="row"] { background: var(--colors-background-bg-secondary-hover) !important; }
+.sh-tbl-scroll { overflow-x: auto; }
+/* Row-actions overflow menu: the floating panel has to escape the table's own
+   horizontal scroller and the preview card. */
+.sh-preview:has(.sh-tbl-menu) { overflow: visible; }
+.sh-preview:has(.sh-tbl-menu) .sh-preview-body { border-radius: 14px; }
+.sh-tbl-menu div:has(table) { overflow-x: clip !important; overflow-y: visible !important; }
+/* Tabs: hover and focus live in component state, so the diagrams freeze them
+   with a class on the specimen. */
+.sh-tab-hover [data-sh-part="item-hover"] { background: var(--colors-background-bg-primary-hover) !important; color: var(--colors-text-text-secondary-700) !important; }
+.sh-tab-focus [data-sh-part="item-focus"] { box-shadow: 0 0 6px 1px var(--colors-brand-100) !important; }
+.sh-tbl-menu thead tr { background: transparent !important; }
+.sh-tbl-menu thead th { background: var(--colors-background-bg-secondary); }
+.sh-tbl-menu thead th:first-child { border-top-left-radius: var(--radius-md-px); }
+.sh-tbl-menu thead th:last-child { border-top-right-radius: var(--radius-md-px); }

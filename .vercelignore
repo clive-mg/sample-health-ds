@@ -1,0 +1,10 @@
+# Authoring files: kept in the repo for Claude Code, not published on the site.
+.claude
+CLAUDE.md
+SKILL.md
+docs-rules.md
+spacing-audit.md
+typography-audit.md
+_adherence.oxlintrc.json
+uploads
+DEPLOYING.md

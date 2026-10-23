@@ -1,0 +1,9 @@
+/* Untitled UI PRO webfonts.
+   Primary UI + display face is Inter; monospace is Roboto Mono.
+   Sourced from Google Fonts (self-hostable equivalents of the file's fonts).
+   NOTE: the source file also references Suisse Intl, Euclid Circular A and
+   Sharp Grotesk in a handful of sample/marketing frames (<15 uses total).
+   Those are licensed faces not shipped here; Inter is the system default and
+   the correct substitute — see readme.md "Font substitutions". */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,400..700;1,400..700&display=swap");

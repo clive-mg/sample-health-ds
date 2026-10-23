@@ -1,0 +1,11 @@
+/* Sample Health — base element styles.
+   Only rules that cannot be expressed inline on a component belong here. */
+
+input::placeholder,
+textarea::placeholder { color: var(--colors-text-text-placeholder); opacity: 1; }
+
+/* Slim, always-visible scroll track for menus and option lists. */
+.uui-scroll-slim { scrollbar-width: thin; scrollbar-color: var(--colors-border-border-primary) transparent; scrollbar-gutter: stable; }
+.uui-scroll-slim::-webkit-scrollbar { width: 6px; height: 6px; }
+.uui-scroll-slim::-webkit-scrollbar-track { background: transparent; }
+.uui-scroll-slim::-webkit-scrollbar-thumb { background: var(--colors-border-border-primary); border-radius: var(--radius-full-px); }

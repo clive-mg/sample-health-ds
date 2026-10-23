@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Knowledge base detail" description="Help center article: back link, articles-in-topic list, article body and assistance card" -->
+<helmet><script src="./ds-base.js"></script><style>body{margin:0;background:var(--colors-background-bg-secondary)}</style></helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column;background:var(--colors-background-bg-secondary);font-family:var(--font-body)">
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.TopNav" dc-props="{{ nav }}" hint-size="100%,100px"></x-import>
+<main style="flex:1;width:100%;max-width:var(--container-max-width);margin:0 auto;box-sizing:border-box;padding:var(--spacing-4xl-px) var(--container-gutter-px) var(--spacing-5xl-px);display:flex;flex-direction:column;gap:var(--spacing-4xl-px)">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-3xl-px)">
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="link-gray" size="sm" icon-leading="{{ backIcon }}" hint-size="70px,20px">Back</x-import>
+<div style="width:100%;display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--spacing-4xl-px)">
+<nav aria-label="Articles in Claims" style="flex:0 1 240px;min-width:0;display:flex;flex-direction:column;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Articles in Claims</h2>
+<div style="display:flex;flex-direction:column;gap:var(--spacing-xs-px)">
+<sc-for list="{{ articles }}" as="a" hint-placeholder-count="10">
+<sc-if value="{{ a.active }}" hint-placeholder-val="{{ false }}"><a href="#" aria-current="page" onClick="{{ a.onPick }}" style="display:block;padding:var(--spacing-md-px) var(--spacing-lg-px);border-radius:var(--radius-md-px);background:var(--colors-background-bg-brand-primary);font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-brand-secondary-700);text-decoration:none;text-wrap:pretty">{{ a.title }}</a></sc-if>
+<sc-if value="{{ a.inactive }}" hint-placeholder-val="{{ true }}"><a href="#" onClick="{{ a.onPick }}" style="display:block;padding:var(--spacing-md-px) var(--spacing-lg-px);border-radius:var(--radius-md-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none;text-wrap:pretty" style-hover="background:var(--colors-background-bg-primary-hover);color:var(--colors-text-text-secondary-700)">{{ a.title }}</a></sc-if>
+</sc-for>
+</div>
+</nav>
+<article style="flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:var(--spacing-xl-px)">
+<h1 style="margin:0;font-size:20px;line-height:24px;font-weight:600;color:var(--colors-text-text-primary-900)">{{ current.title }}</h1>
+<div style="display:flex;flex-direction:column;gap:var(--spacing-lg-px)">
+<sc-for list="{{ current.body }}" as="para" hint-placeholder-count="4"><p style="margin:0;font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-secondary-700);text-wrap:pretty">{{ para }}</p></sc-for>
+</div>
+</article>
+</div>
+</div>
+<section style="border-radius:var(--radius-xl-px);background:var(--colors-background-bg-secondary);box-sizing:border-box;padding:var(--spacing-3xl-px);display:flex;flex-direction:column;gap:var(--spacing-xl-px)">
+<div style="display:flex;flex-direction:column;gap:var(--spacing-xs-px)">
+<h2 style="margin:0;font-size:18px;line-height:22px;font-weight:600;color:var(--colors-text-text-primary-900)">Need additional assistance?</h2>
+<p style="margin:0;font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-wrap:pretty">Find answers to common questions, browse helpful resources, or reach out to our support team for assistance with your coverage, claims, or account.</p>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="link-color" size="sm" icon-leading="{{ helpIcon }}" hint-size="140px,20px">Visit Help Center</x-import>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="link-color" size="sm" icon-leading="{{ kbIcon }}" hint-size="170px,20px">Visit Knowledge Base</x-import>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="link-color" size="sm" icon-leading="{{ mailIcon }}" hint-size="200px,20px">help@samplehealth.com</x-import>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="link-color" size="sm" icon-leading="{{ phoneIcon }}" hint-size="200px,20px">1-866-509-5398 (TTY: 711)</x-import>
+</div>
+</section>
+</main>
+<footer style="background:var(--colors-background-bg-secondary);border-top:1px solid var(--colors-border-border-secondary);padding:var(--spacing-6xl-px) var(--spacing-none-px) var(--spacing-4xl-px)"><div style="max-width:var(--container-max-width);margin:0 auto;box-sizing:border-box;padding:var(--spacing-none-px) var(--container-gutter-px);display:flex;flex-direction:column;gap:var(--spacing-4xl-px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--spacing-4xl-px)">
+<div><span role="img" aria-label="Sample Health" style="display:block;height:64px;aspect-ratio:5/2;background:var(--colors-brand-600);-webkit-mask:url(../../assets/logo-footer.svg) left center/contain no-repeat;mask:url(../../assets/logo-footer.svg) left center/contain no-repeat"></span></div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Requests &amp; Issues</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Coverage Decisions &amp; Exceptions</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Appeals &amp; Grievances</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Disenrollment Rights &amp; Responsibilities</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Notices &amp; Disclosures</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Emergency &amp; Disaster Notifications</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Medicare National Coverage Determinations</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Patient Data Access</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Plan Information</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">About Sample Health</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">CMS Star Ratings</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Member Website Description</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Site Map</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Get Help</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Message Member Services</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Call Member Services</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Accessibility Help</a>
+</div>
+</div>
+<div style="display:flex;align-items:center;flex-wrap:wrap;gap:var(--spacing-xl-px)">
+<span style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)">Language Assistance:</span>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">English</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Español</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Other languages</a>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--spacing-xl-px);padding-top:var(--spacing-3xl-px);border-top:1px solid var(--colors-border-border-secondary)">
+<div style="display:flex;flex-wrap:wrap;gap:var(--spacing-3xl-px)">
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Privacy Policy</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Terms of Use</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Fraud, Waste &amp; Abuse</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Non-discrimination Notice</a>
+</div>
+<span style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)">© 2026 Sample Health. All rights reserved.</span>
+</div>
+</div></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const NS = "UntitledUIPRODesignSystem_380e88";
+const ARTICLES = [
+  {
+    "title": "How do I submit a claim online?",
+    "body": [
+      "Submitting a medical claim online is the fastest and most convenient way to get reimbursed for covered healthcare services. Before you begin, make sure you have your Member ID, the date of service, provider details, and an itemized bill or receipt from your healthcare provider ready to upload.",
+      "To get started, log in to your member account at SampleHealth.com and navigate to the Claims section from the main menu. Once there, select Submit a New Claim and choose the type of claim you are filing — medical, specialist, or emergency. Fill in the required fields including the provider name, address, and the service date.",
+      "Once all fields are completed and documents are attached, review your submission carefully before clicking Submit. You will receive a confirmation email with a unique claim reference number within a few minutes. Use this number to track your claim status under the Claims History tab in your account.",
+      "Most online claims are processed within 7 to 14 business days. If additional information is needed, a member services representative will contact you via your preferred communication method. For urgent claims or complex cases, you may also call the Member Services number on the back of your ID card for assisted submission."
+    ]
+  },
+  {
+    "title": "Where can I find my claims?",
+    "body": [
+      "All claims filed under your plan, whether submitted by you or by your provider, are listed in the Claims section of your member account. Log in at SampleHealth.com and select Claims & Approvals from the main menu to see the full list.",
+      "Each claim shows the date of service, provider, claim number, amount billed and current status. Use the filters at the top of the list to narrow results by status, type of care, claim type or date of service.",
+      "Select any claim to open its detail view, where you can review the services billed, what your plan paid, what you may owe, and download related documents. Claims for dependents on your plan appear in the same list."
+    ]
+  },
+  {
+    "title": "How long does it take to process my claim?",
+    "body": [
+      "Most claims are processed within 7 to 14 business days from the date we receive them. Claims submitted online are usually processed faster than claims sent by mail, which can take up to 30 days.",
+      "Processing can take longer if the claim is missing information, needs a medical review, or involves another insurance plan. If we need anything from you or your provider, a member services representative will contact you through your preferred communication method.",
+      "You can follow each step of processing from the claim's detail view in your member account."
+    ]
+  },
+  {
+    "title": "How do I check the status of a submitted claim?",
+    "body": [
+      "Log in to your member account and open Claims & Approvals. Every claim shows its current status, such as Submitted, In Review, Approved, Paid or Denied.",
+      "Select a claim to see more detail, including when it was received, any requests for additional information, and the final payment amount once it has been processed.",
+      "You can also search for a specific claim using the claim reference number from your confirmation email, or call the Member Services number on the back of your ID card for an update."
+    ]
+  },
+  {
+    "title": "Can I appeal a denied or underpaid claim?",
+    "body": [
+      "Yes. If you disagree with a decision on a claim, you have the right to ask us to review it. You must request an appeal within 65 days of the date on your Explanation of Benefits.",
+      "To start an appeal, open the claim in your member account and select Request an Appeal, or send a written request with your member ID, the claim number and the reason you disagree. Include any supporting documents, such as a letter from your doctor or medical records.",
+      "We will review your appeal and send you a written decision. If the decision is not in your favor, the letter will explain your next options, including an independent review."
+    ]
+  },
+  {
+    "title": "What documents do I need to file a claim?",
+    "body": [
+      "For most claims you will need your Member ID, the date of service, and an itemized bill from your provider. The itemized bill should show the provider's name and address, a description of each service, the diagnosis and procedure codes, and the amount charged.",
+      "If you have already paid for the service, include a receipt or proof of payment so we can reimburse you. For prescription claims, include the pharmacy receipt showing the drug name, dosage and quantity.",
+      "If another insurance plan has already paid part of the cost, attach that plan's Explanation of Benefits. Documents can be uploaded as PDF, JPG or PNG files."
+    ]
+  },
+  {
+    "title": "How do I get reimbursed for an out-of-network visit?",
+    "body": [
+      "If your plan covers out-of-network care and you paid the provider directly, you can submit a claim for reimbursement. Log in to your member account, go to Claims & Approvals and select Submit a New Claim.",
+      "Choose out-of-network as the claim type, enter the provider and service details, and upload the itemized bill and your proof of payment. Reimbursement is based on your plan's out-of-network benefits and the allowed amount for the service, so you may be responsible for the difference.",
+      "Once the claim is processed, payment is sent by direct deposit or check, along with an Explanation of Benefits showing how the amount was calculated."
+    ]
+  },
+  {
+    "title": "What is the deadline to submit a claim?",
+    "body": [
+      "Claims should be submitted as soon as possible after you receive care. For most plans, claims must be received within 12 months of the date of service.",
+      "In-network providers usually file claims for you, so you only need to submit a claim yourself for out-of-network care or when you have paid a provider directly.",
+      "Claims received after the deadline may be denied unless there is a valid reason for the delay. If you think you may miss the deadline, call Member Services for help."
+    ]
+  },
+  {
+    "title": "How do I file a claim for a family member?",
+    "body": [
+      "If your family member is covered as a dependent on your plan, you can file a claim for them from your own member account. Go to Claims & Approvals, select Submit a New Claim, and choose the family member from the patient list.",
+      "Enter the service details and upload the itemized bill just as you would for your own claim. The claim will appear in your claims list under the family member's name.",
+      "Dependents aged 18 or older may need to give permission before you can view or submit claims on their behalf. They can grant access from their own account settings."
+    ]
+  },
+  {
+    "title": "Where can I download my Explanation of Benefits (EOB)?",
+    "body": [
+      "An Explanation of Benefits (EOB) is created for each claim once it has been processed. It shows what was billed, what your plan paid, and what you may owe the provider. An EOB is not a bill.",
+      "To download an EOB, log in to your member account, open Claims & Approvals and select the claim. Choose Download EOB to save a PDF copy.",
+      "You can also view monthly EOB summaries under Documents in your account. If you prefer paper copies, update your communication preferences in Account Settings."
+    ]
+  }
+];
+class Component extends DCLogic {
+  state = { active: 0 };
+  componentDidMount() {
+    this.onResize = () => {
+      clearTimeout(this.rt);
+      this.rt = setTimeout(() => {
+        const compact = window.innerWidth < 1024;
+        if (compact !== this.compact) { this.compact = compact; this.forceUpdate(); }
+      }, 150);
+    };
+    window.addEventListener("resize", this.onResize);
+    if (!window[NS]) this.poll = setInterval(() => { if (window[NS]) { clearInterval(this.poll); this.forceUpdate(); } }, 100);
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this.onResize); clearInterval(this.poll); clearTimeout(this.rt); }
+  renderVals() {
+    const UI = window[NS] || {};
+    if (this.compact === undefined) this.compact = window.innerWidth < 1024;
+    const ic = (name) => (UI.Icon ? React.createElement(UI.Icon, { name, size: 20, "aria-hidden": "true" }) : null);
+    return {
+      nav: {
+        theme: "brand",
+        contain: "var(--container-max-width)",
+        compact: this.compact,
+        logoSrc: "../../assets/logo-nav-white.png",
+        items: [
+          { label: "Home" },
+          { label: "Coverage & Benefits" },
+          { label: "Find Care" },
+          { label: "Claims & Approvals", children: [] },
+          { label: "Health & Wellness" },
+          { label: "Resources", children: [] }
+        ],
+        current: "Home",
+        utility: { right: [{ label: "Support Center", icon: "HelpCircle" }] },
+        account: { name: "Lynnell Merv", email: "Lynnell.Merv1950@gmail.com", initials: "LM", showLabel: true, menu: [{ label: "Profile" }, { label: "Sign out" }] }
+      },
+      current: ARTICLES[this.state.active],
+      articles: ARTICLES.map((a, i) => ({ title: a.title, active: i === this.state.active, inactive: i !== this.state.active,
+        onPick: (e) => { e.preventDefault(); this.setState({ active: i }); window.scrollTo({ top: 0, behavior: "smooth" }); } })),
+      backIcon: ic("ArrowLeft"),
+      helpIcon: ic("HelpCircle"),
+      kbIcon: ic("GraduationHat01"),
+      mailIcon: ic("Mail01"),
+      phoneIcon: ic("Phone")
+    };
+  }
+}
+</script>
+</body>
+</html>

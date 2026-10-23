@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Manage profile" description="Member profile: contact, personal, language and communication preferences in read-only cards with per-section edit links" -->
+<helmet><script src="./ds-base.js"></script><style>body{margin:0;background:var(--colors-background-bg-secondary)}</style></helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column;background:var(--colors-background-bg-secondary);font-family:var(--font-body)">
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.TopNav" dc-props="{{ nav }}" hint-size="100%,100px"></x-import>
+<main style="flex:1;width:100%;max-width:var(--container-max-width);margin:0 auto;box-sizing:border-box;padding:var(--spacing-4xl-px) var(--container-gutter-px) var(--spacing-7xl-px);display:flex;flex-direction:column;gap:var(--spacing-5xl-px)">
+<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:var(--spacing-xl-px);flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;gap:var(--spacing-xs-px);min-width:0">
+<h1 style="margin:0;font-size:30px;line-height:36px;font-weight:600;color:var(--colors-text-text-primary-900)">Manage Profile</h1>
+<p style="margin:0;font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)">View and edit your member information</p>
+</div>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Tooltip" title="Help with your profile" placement="bottom" hint-size="36px,36px"><x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="secondary" size="sm" icon-only="{{ true }}" icon-leading="{{ helpIcon }}" aria-label="Help with your profile" hint-size="36px,36px"></x-import></x-import>
+</div>
+<section style="display:flex;flex-direction:column;gap:var(--spacing-xl-px)">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--spacing-xl-px);flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;gap:var(--spacing-xs-px);min-width:0;flex:1 1 480px;max-width:800px">
+<h2 style="margin:0;font-size:20px;line-height:24px;font-weight:600;color:var(--colors-text-text-primary-900)">Contact Info</h2>
+
+</div>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="link-color" size="sm" icon-trailing="{{ editIcon }}" hint-size="160px,20px">Edit Contact Info</x-import>
+</div>
+<div style="border:1px solid var(--colors-border-border-secondary);border-radius:var(--radius-xl-px);background:var(--colors-background-bg-primary);box-shadow:0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs);padding:var(--spacing-xl-px);display:flex;flex-direction:column;gap:var(--spacing-md-px)">
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Member Name:</span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">Jane D. Smith</span></div>
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Preferred Name:</span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">Jane</span></div>
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Mailing Address:</span><span style="display:inline-flex;padding-top:var(--spacing-xxs-px)"><x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.FieldHelpIcon" text="Mailing Address" size="{{ 16 }}" hint-size="16px,16px"></x-import></span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">123 Sunshine Blvd, Miami, FL 33101</span></div>
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Phone Number for Voice Calls:</span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">11-222-3333</span></div>
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Phone Number for Text Messages:</span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">11-222-3333</span></div>
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Email Address:</span><span style="display:inline-flex;padding-top:var(--spacing-xxs-px)"><x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.FieldHelpIcon" text="Email Address" size="{{ 16 }}" hint-size="16px,16px"></x-import></span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">jane.smith@gmail.com</span></div>
+</div>
+</section>
+<section style="display:flex;flex-direction:column;gap:var(--spacing-xl-px)">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--spacing-xl-px);flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;gap:var(--spacing-xs-px);min-width:0;flex:1 1 480px;max-width:800px">
+<h2 style="margin:0;font-size:20px;line-height:24px;font-weight:600;color:var(--colors-text-text-primary-900)">Personal Info</h2>
+<p style="margin:0;font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-wrap:pretty">Essence and the Centers for Medicare &amp; Medicaid Services is committed to addressing inequities within the health care system. You can help reduce disparities by answering these questions. Answering these questions is your choice.</p>
+</div>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="link-color" size="sm" icon-trailing="{{ editIcon }}" hint-size="160px,20px">Edit Personal Info</x-import>
+</div>
+<div style="border:1px solid var(--colors-border-border-secondary);border-radius:var(--radius-xl-px);background:var(--colors-background-bg-primary);box-shadow:0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs);padding:var(--spacing-xl-px);display:flex;flex-direction:column;gap:var(--spacing-md-px)">
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Sex</span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">Female</span></div>
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Race</span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">White or Caucasian</span></div>
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Ethnicity:</span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">Prefer not to answer</span></div>
+</div>
+</section>
+<section style="display:flex;flex-direction:column;gap:var(--spacing-xl-px)">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--spacing-xl-px);flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;gap:var(--spacing-xs-px);min-width:0;flex:1 1 480px;max-width:800px">
+<h2 style="margin:0;font-size:20px;line-height:24px;font-weight:600;color:var(--colors-text-text-primary-900)">Language &amp; Accessibility</h2>
+<p style="margin:0;font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-wrap:pretty">We will honor your selections whenever possible, however, we'll default to English if your language preference isn't available.</p>
+</div>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="link-color" size="sm" icon-trailing="{{ editIcon }}" hint-size="160px,20px">Edit Language &amp; Accessibility Info</x-import>
+</div>
+<div style="border:1px solid var(--colors-border-border-secondary);border-radius:var(--radius-xl-px);background:var(--colors-background-bg-primary);box-shadow:0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs);padding:var(--spacing-xl-px);display:flex;flex-direction:column;gap:var(--spacing-md-px)">
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Spoken Language:</span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">English</span></div>
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Written Language:</span><span style="display:inline-flex;padding-top:var(--spacing-xxs-px)"><x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.FieldHelpIcon" text="Written Language" size="{{ 16 }}" hint-size="16px,16px"></x-import></span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">English</span></div>
+</div>
+</section>
+<section style="display:flex;flex-direction:column;gap:var(--spacing-xl-px)">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--spacing-xl-px);flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;gap:var(--spacing-xs-px);min-width:0;flex:1 1 480px;max-width:800px">
+<h2 style="margin:0;font-size:20px;line-height:24px;font-weight:600;color:var(--colors-text-text-primary-900)">Communication Preferences</h2>
+<p style="margin:0;font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-wrap:pretty">We will honor your selections whenever possible. Occasionaily, you may still receive information in the mail. To ensure our emails make it to your inbox, add norepiy@essencehealthcare.com as a contact.</p>
+</div>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="link-color" size="sm" icon-trailing="{{ editIcon }}" hint-size="160px,20px">Edit Communication Preferences</x-import>
+</div>
+<div style="border:1px solid var(--colors-border-border-secondary);border-radius:var(--radius-xl-px);background:var(--colors-background-bg-primary);box-shadow:0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs);padding:var(--spacing-xl-px);display:flex;flex-direction:column;gap:var(--spacing-md-px)">
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Member Communication</span><span style="display:inline-flex;padding-top:var(--spacing-xxs-px)"><x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.FieldHelpIcon" text="Member Communication" size="{{ 16 }}" hint-size="16px,16px"></x-import></span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">Email, SMS, Calls</span></div>
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Explanation of Benefits (EOB)</span><span style="display:inline-flex;padding-top:var(--spacing-xxs-px)"><x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.FieldHelpIcon" text="Explanation of Benefits (EOB)" size="{{ 16 }}" hint-size="16px,16px"></x-import></span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">Email</span></div>
+<div style="display:flex;flex-wrap:wrap;column-gap:var(--spacing-3xl-px);row-gap:var(--spacing-xxs-px)"><span style="flex:0 1 256px;min-width:0;display:flex;align-items:flex-start;gap:var(--spacing-sm-px);font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)"><span>Plan Annual Notice of Change (ANOC)</span><span style="display:inline-flex;padding-top:var(--spacing-xxs-px)"><x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.FieldHelpIcon" text="Plan Annual Notice of Change (ANOC)" size="{{ 16 }}" hint-size="16px,16px"></x-import></span></span><span style="flex:1 1 320px;min-width:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900);overflow-wrap:anywhere">Email, Calls</span></div>
+</div>
+</section>
+</main>
+<footer style="background:var(--colors-background-bg-secondary);border-top:1px solid var(--colors-border-border-secondary);padding:var(--spacing-6xl-px) var(--spacing-none-px) var(--spacing-4xl-px)"><div style="max-width:var(--container-max-width);margin:0 auto;box-sizing:border-box;padding:var(--spacing-none-px) var(--container-gutter-px);display:flex;flex-direction:column;gap:var(--spacing-4xl-px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--spacing-4xl-px)">
+<div><span role="img" aria-label="Sample Health" style="display:block;height:64px;aspect-ratio:5/2;background:var(--colors-brand-600);-webkit-mask:url(../../assets/logo-footer.svg) left center/contain no-repeat;mask:url(../../assets/logo-footer.svg) left center/contain no-repeat"></span></div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Requests &amp; Issues</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Coverage Decisions &amp; Exceptions</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Appeals &amp; Grievances</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Disenrollment Rights &amp; Responsibilities</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Notices &amp; Disclosures</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Emergency &amp; Disaster Notifications</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Medicare National Coverage Determinations</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Patient Data Access</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Plan Information</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">About Sample Health</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">CMS Star Ratings</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Member Website Description</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Site Map</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Get Help</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Message Member Services</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Call Member Services</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Accessibility Help</a>
+</div>
+</div>
+<div style="display:flex;align-items:center;flex-wrap:wrap;gap:var(--spacing-xl-px)">
+<span style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)">Language Assistance:</span>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">English</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Español</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Other languages</a>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--spacing-xl-px);padding-top:var(--spacing-3xl-px);border-top:1px solid var(--colors-border-border-secondary)">
+<div style="display:flex;flex-wrap:wrap;gap:var(--spacing-3xl-px)">
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Privacy Policy</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Terms of Use</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Fraud, Waste &amp; Abuse</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Non-discrimination Notice</a>
+</div>
+<span style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)">© 2026 Sample Health. All rights reserved.</span>
+</div>
+</div></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const NS = "UntitledUIPRODesignSystem_380e88";
+class Component extends DCLogic {
+  componentDidMount() {
+    this.onResize = () => {
+      clearTimeout(this.rt);
+      this.rt = setTimeout(() => {
+        const compact = window.innerWidth < 1024;
+        if (compact !== this.compact) { this.compact = compact; this.forceUpdate(); }
+      }, 150);
+    };
+    window.addEventListener("resize", this.onResize);
+    if (!window[NS]) this.poll = setInterval(() => { if (window[NS]) { clearInterval(this.poll); this.forceUpdate(); } }, 100);
+  }
+  componentWillUnmount() { clearInterval(this.poll); window.removeEventListener("resize", this.onResize); clearTimeout(this.rt); }
+  renderVals() {
+    const UI = window[NS] || {};
+    const h = React.createElement;
+    if (this.compact === undefined) this.compact = window.innerWidth < 1024;
+    const ic = (name) => (UI.Icon ? h(UI.Icon, { name, size: 20, "aria-hidden": "true" }) : null);
+    return {
+      nav: {
+        theme: "brand",
+        contain: "var(--container-max-width)",
+        compact: this.compact,
+        logoSrc: "../../assets/logo-nav-white.png",
+        items: [{ label: "Home" }, { label: "Members" }, { label: "Reports" }, { label: "Resources" }, { label: "About" }],
+        current: "Members",
+        utility: {
+          left: [{ label: "United States - EN", icon: "Globe01", menu: true }],
+          right: [{ label: "Messages", icon: "Mail01" }, { label: "Help Center", icon: "HelpCircle" }]
+        },
+        account: { name: "Caitlyn King", email: "caitlyn.king@example.com", initials: "CK", showLabel: true, menu: [{ label: "Profile" }, { label: "Sign out" }] }
+      },
+      helpIcon: ic("HelpCircle"),
+      editIcon: ic("Edit01")
+    };
+  }
+}
+</script>
+</body>
+</html>

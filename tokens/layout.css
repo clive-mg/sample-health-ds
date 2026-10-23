@@ -1,0 +1,19 @@
+/* Sample Health — layout: breakpoints and the responsive page container.
+   Published on Foundations › Layout as breakpoint.* and container.*.
+   Custom properties cannot drive a media query, so the breakpoint tokens are
+   reference values; the queries below repeat them as literals.
+   --container-max-width is the live value: it steps at each breakpoint, so a
+   page container is max-width:var(--container-max-width) + margin auto +
+   inline padding var(--container-gutter-px). Max widths include the gutter.
+   Below 1200px (including Small, ≥992px) the container is 100% with the 16px gutter on each side. */
+:root {
+  --breakpoint-sm: 992px;
+  --breakpoint-md: 1200px;
+  --breakpoint-lg: 1400px;
+  --container-max-width-md: 1140px;
+  --container-max-width-lg: 1320px;
+  --container-gutter-px: var(--spacing-xl-px);
+  --container-max-width: 100%;
+}
+@media (min-width: 1200px) { :root { --container-max-width: var(--container-max-width-md); } }
+@media (min-width: 1400px) { :root { --container-max-width: var(--container-max-width-lg); } }

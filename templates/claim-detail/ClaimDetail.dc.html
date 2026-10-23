@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Claim detail" description="Single claim: overview, care details, cost breakdown and paged service lines in collapsible cards" -->
+<helmet><script src="./ds-base.js"></script><style>body{margin:0;background:var(--colors-background-bg-secondary)}</style></helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column;background:var(--colors-background-bg-secondary);font-family:var(--font-body)">
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.TopNav" dc-props="{{ nav }}" hint-size="100%,100px"></x-import>
+<main style="flex:1;width:100%;max-width:var(--container-max-width);margin:0 auto;box-sizing:border-box;padding:var(--spacing-4xl-px) var(--container-gutter-px) var(--spacing-7xl-px);display:flex;flex-direction:column;gap:var(--spacing-3xl-px)">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-xl-px)">
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="link-gray" size="sm" icon-leading="{{ backIcon }}" on-click="{{ goBack }}" hint-size="150px,20px">Back to Claims List</x-import>
+<div style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-xl-px);flex-wrap:wrap">
+<h1 style="margin:0;font-size:30px;line-height:36px;font-weight:600;color:var(--colors-text-text-primary-900)">Claim # 6196201787979979</h1>
+<div style="display:flex;align-items:center;gap:var(--spacing-lg-px)">
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Tooltip" title="Help with this claim" placement="bottom" hint-size="36px,36px"><x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="secondary" size="sm" icon-only="{{ true }}" icon-leading="{{ helpIcon }}" aria-label="Help with this claim" hint-size="36px,36px"></x-import></x-import>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Dropdown" align="right" trigger="{{ moreTrigger }}" items="{{ moreItems }}" hint-size="90px,36px"></x-import>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="secondary" size="sm" hint-size="80px,36px">Appeal</x-import>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="primary" size="sm" hint-size="90px,36px">View EoB</x-import>
+</div>
+</div>
+</div>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Accordion" variant="cards" indicator="chevronInline" align="center" style="gap:var(--spacing-xl-px)" multiple="{{ true }}" default-open="{{ openAll }}" items="{{ sections }}" hint-size="100%,1200px"></x-import>
+</main>
+<footer style="background:var(--colors-background-bg-secondary);border-top:1px solid var(--colors-border-border-secondary);padding:var(--spacing-6xl-px) var(--spacing-none-px) var(--spacing-4xl-px)"><div style="max-width:var(--container-max-width);margin:0 auto;box-sizing:border-box;padding:var(--spacing-none-px) var(--container-gutter-px);display:flex;flex-direction:column;gap:var(--spacing-4xl-px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--spacing-4xl-px)">
+<div><span role="img" aria-label="Sample Health" style="display:block;height:64px;aspect-ratio:5/2;background:var(--colors-brand-600);-webkit-mask:url(../../assets/logo-footer.svg) left center/contain no-repeat;mask:url(../../assets/logo-footer.svg) left center/contain no-repeat"></span></div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Requests &amp; Issues</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Coverage Decisions &amp; Exceptions</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Appeals &amp; Grievances</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Disenrollment Rights &amp; Responsibilities</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Notices &amp; Disclosures</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Emergency &amp; Disaster Notifications</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Medicare National Coverage Determinations</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Patient Data Access</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Plan Information</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">About Sample Health</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">CMS Star Ratings</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Member Website Description</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Site Map</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Get Help</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Message Member Services</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Call Member Services</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Accessibility Help</a>
+</div>
+</div>
+<div style="display:flex;align-items:center;flex-wrap:wrap;gap:var(--spacing-xl-px)">
+<span style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)">Language Assistance:</span>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">English</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Español</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Other languages</a>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--spacing-xl-px);padding-top:var(--spacing-3xl-px);border-top:1px solid var(--colors-border-border-secondary)">
+<div style="display:flex;flex-wrap:wrap;gap:var(--spacing-3xl-px)">
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Privacy Policy</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Terms of Use</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Fraud, Waste &amp; Abuse</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Non-discrimination Notice</a>
+</div>
+<span style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)">© 2026 Sample Health. All rights reserved.</span>
+</div>
+</div></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const NS = "UntitledUIPRODesignSystem_380e88";
+const LINES = [
+  ["Ultrasound", "Q78475", "22 Jan 2025", "Dr. Eva Suarez, MD", 150],
+  ["X-Ray", "A72312", "08 Dec 2024", "Dr. Steve Johnson, MD", 300],
+  ["MRI", "B93847", "10 Sep 2024", "Dr. Lisa Chen, MD", 50],
+  ["CT Scan", "C51234", "15 Aug 2024", "Dr. Michael Smith, MD", 120],
+  ["Mammography", "D02948", "30 Jul 2024", "Dr. Rachel Adams, DO", 250],
+  ["Fluoroscopy", "E19475", "01 Jun 2024", "Dr. Jason Lee, MD", 75],
+  ["PET Scan", "F83729", "20 May 2024", "Dr. Angela White, MD", 400],
+  ["Electrocardiogram", "G48216", "12 Apr 2024", "Dr. Brian Kim, MD", 90],
+  ["Angiography", "H95824", "05 Mar 2024", "Dr. Sarah Patel, DO", 600],
+  ["Endoscopy", "I20374", "18 Feb 2024", "Dr. Kevin Thompson, MD", 200]
+].map(([service, code, date, provider, amt]) => ({ service, code, date, provider, billed: amt, allowed: amt, planPaid: amt, owes: amt, copay: amt }));
+const usd = (n) => "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+class Component extends DCLogic {
+  componentDidMount() {
+    this.onResize = () => {
+      clearTimeout(this.rt);
+      this.rt = setTimeout(() => {
+        const compact = window.innerWidth < 1024;
+        if (compact !== this.compact) { this.compact = compact; this.forceUpdate(); }
+      }, 150);
+    };
+    window.addEventListener("resize", this.onResize);
+    if (!window[NS]) this.poll = setInterval(() => { if (window[NS]) { clearInterval(this.poll); this.forceUpdate(); } }, 100);
+  }
+  componentWillUnmount() { clearInterval(this.poll); window.removeEventListener("resize", this.onResize); clearTimeout(this.rt); }
+  renderVals() {
+    const UI = window[NS] || {};
+    const h = React.createElement;
+    if (this.compact === undefined) this.compact = window.innerWidth < 1024;
+    const ic = (name, size) => (UI.Icon ? h(UI.Icon, { name, size: size || 20, "aria-hidden": "true" }) : null);
+    const ready = !!UI.Button;
+
+    const title = (icon, label) => h("span", { style: { display: "inline-flex", alignItems: "center", gap: "var(--spacing-lg-px)" } },
+      ready ? h(UI.FeaturedIcon, { size: "sm", color: "brand", shape: "circle" }, ic(icon)) : null, label);
+    const indent = { paddingLeft: "calc(var(--spacing-5xl-px) + var(--spacing-lg-px))" };
+    const fields = (list) => h("dl", { style: { ...indent, margin: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "var(--spacing-xl-px) var(--spacing-3xl-px)" } },
+      list.map(([label, value], i) => h("div", { key: i, style: { display: "flex", flexDirection: "column", gap: "var(--spacing-xxs-px)", minWidth: 0 } },
+        h("dt", { style: { fontSize: 14, lineHeight: "20px", fontWeight: 400, color: "var(--colors-text-text-tertiary-600)" } }, label),
+        h("dd", { style: { margin: 0, fontSize: 14, lineHeight: "20px", fontWeight: 600, color: "var(--colors-text-text-primary-900)" } }, value))));
+
+    const lineCols = [
+      { key: "service", header: "Service", render: (r) => h("span", { style: { color: "var(--colors-text-text-primary-900)" } }, r.service) },
+      { key: "code", header: "Procedure Code" },
+      { key: "date", header: "Service Date" },
+      { key: "provider", header: "Rendering Provider" },
+      { key: "billed", header: "Amount Billed", align: "right", render: (r) => usd(r.billed) },
+      { key: "allowed", header: "Allowed Amount", align: "right", render: (r) => usd(r.allowed) },
+      { key: "planPaid", header: "Plan Paid", align: "right", render: (r) => usd(r.planPaid) },
+      { key: "owes", header: "Patient Owes", align: "right", render: (r) => usd(r.owes) },
+      { key: "copay", header: "Copay", align: "right", render: (r) => usd(r.copay) }
+    ];
+
+    const sections = !ready ? [] : [
+      { title: title("Eye", "Overview"), content: fields([
+        ["Member Name", "Caitlyn King"],
+        ["Status", h("span", null, h(UI.Badge, { size: "sm", type: "pill-color", color: "success" }, "Closed"))],
+        ["Date of Service", "01/05/2025"], ["Claim ID", "61962017"], ["Member ID", "002636870-01"]]) },
+      { title: title("PlusCircle", "Care Details"), content: fields([
+        ["Type(s) of Service", "Ultrasound, X-Ray (2)"], ["Provider Name", "Dr. Eva Suarez, MD"],
+        ["Practice Name", "Tidewater Physicians Multi-speciality"], ["Network", "In-Network Provider"]]) },
+      { title: title("CurrencyDollarCircle", "Cost Breakdown"), content: fields([
+        ["Total Charges", "$169.01"], ["Total Not Covered", "$0.01"], ["Total Covered", "$96.70"], ["Total Deductible", "$0"],
+        ["Total Copay / Coinsurance", "$50"], ["Total Paid by Plan", "$46.70"], ["Patient Responsibility", "$50"], ["Date of Payment", "01/05/2025"]]) },
+      { title: title("ActivityHeart", "Service Line Details"), content: h("div", { style: { ...indent, display: "flex", flexDirection: "column", gap: "var(--spacing-lg-px)", minWidth: 0 } },
+        h(UI.Table, { columns: lineCols, data: LINES, rowKey: (r) => r.code,
+          footer: h(UI.Pagination, { variant: "toolbar", totalItems: 20, perPage: 10, perPageOptions: [10, 25, 50], style: { border: 0, borderRadius: 0, background: "transparent" } }) })) }
+    ];
+
+    return {
+      nav: {
+        theme: "brand",
+        contain: "var(--container-max-width)",
+        compact: this.compact,
+        logoSrc: "../../assets/logo-nav-white.png",
+        items: [{ label: "Home" }, { label: "Members" }, { label: "Reports" }, { label: "Resources" }, { label: "About" }],
+        current: "Members",
+        utility: {
+          left: [{ label: "United States - EN", icon: "Globe01", menu: true }],
+          right: [{ label: "Messages", icon: "Mail01" }, { label: "Help Center", icon: "HelpCircle" }]
+        },
+        account: { name: "Caitlyn King", email: "caitlyn.king@example.com", initials: "CK", showLabel: true, menu: [{ label: "Profile" }, { label: "Sign out" }] }
+      },
+      backIcon: ic("ArrowLeft"),
+      goBack: () => { window.location.href = "../claims-list/ClaimsList.dc.html"; },
+      helpIcon: ic("HelpCircle"),
+      moreTrigger: ready ? h(UI.Button, { hierarchy: "secondary", size: "sm", iconTrailing: ic("ChevronDown") }, "More") : null,
+      moreItems: [{ label: "Download claim", icon: ic("Download01", 16) }, { label: "Message Member Services", icon: ic("Mail01", 16) }],
+      openAll: [0, 1, 2, 3],
+      sections
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Sitemap" description="Site map: every member destination grouped by audience and task, with external links marked" -->
+<helmet><script src="./ds-base.js"></script><style>body{margin:0;background:var(--colors-background-bg-secondary)}</style></helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column;background:var(--colors-background-bg-secondary);font-family:var(--font-body)">
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.TopNav" dc-props="{{ nav }}" hint-size="100%,100px"></x-import>
+<main style="flex:1;width:100%;max-width:var(--container-max-width);margin:0 auto;box-sizing:border-box;padding:var(--spacing-4xl-px) var(--container-gutter-px) var(--spacing-7xl-px);display:flex;flex-direction:column;gap:var(--spacing-6xl-px)">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-xl-px);flex-wrap:wrap">
+<h1 style="margin:0;font-size:30px;line-height:36px;font-weight:600;color:var(--colors-text-text-primary-900)">Site Map</h1>
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="secondary" size="sm" icon-leading="{{ helpIcon }}" hint-size="80px,36px">Help</x-import>
+</div>
+<section style="display:flex;flex-direction:column;gap:var(--spacing-3xl-px)">
+<h2 style="margin:0;font-size:20px;line-height:24px;font-weight:600;color:var(--colors-text-text-primary-900)">For individuals and families</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(max(240px,calc((100% - 3 * var(--spacing-4xl-px)) / 4)),1fr));gap:var(--spacing-4xl-px) var(--spacing-4xl-px)">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h3 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Medicare</h3>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Medicare plans</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Find a doctor</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Check our drug list</a>
+<a href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Enroll in Medicare<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Icon" name="LinkExternal01" size="{{ 20 }}" aria-label="Opens in a new tab" hint-size="20px,20px"></x-import></a>
+<a href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Understand Medicare<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Icon" name="LinkExternal01" size="{{ 20 }}" aria-label="Opens in a new tab" hint-size="20px,20px"></x-import></a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h3 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Health coverage</h3>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Health plans through an employer</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">High deductible health plans</a>
+<a href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Student plans<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Icon" name="LinkExternal01" size="{{ 20 }}" aria-label="Opens in a new tab" hint-size="20px,20px"></x-import></a>
+<a href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">International plans<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Icon" name="LinkExternal01" size="{{ 20 }}" aria-label="Opens in a new tab" hint-size="20px,20px"></x-import></a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h3 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Dental, vision and supplemental</h3>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Dental plans</a>
+<a href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Find a dentist<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Icon" name="LinkExternal01" size="{{ 20 }}" aria-label="Opens in a new tab" hint-size="20px,20px"></x-import></a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Vision plans</a>
+<a href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Find an eye doctor<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Icon" name="LinkExternal01" size="{{ 20 }}" aria-label="Opens in a new tab" hint-size="20px,20px"></x-import></a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h3 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Pharmacy</h3>
+<a href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Pharmacy plan info<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Icon" name="LinkExternal01" size="{{ 20 }}" aria-label="Opens in a new tab" hint-size="20px,20px"></x-import></a>
+<a href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Find a pharmacy<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Icon" name="LinkExternal01" size="{{ 20 }}" aria-label="Opens in a new tab" hint-size="20px,20px"></x-import></a>
+</div>
+</div>
+</section>
+<section style="display:flex;flex-direction:column;gap:var(--spacing-3xl-px)">
+<h2 style="margin:0;font-size:20px;line-height:24px;font-weight:600;color:var(--colors-text-text-primary-900)">Member support</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(max(240px,calc((100% - 3 * var(--spacing-4xl-px)) / 4)),1fr));gap:var(--spacing-4xl-px) var(--spacing-4xl-px)">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h3 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Manage my account</h3>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Find a form</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Get my ID card</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Check a claim</a>
+<a href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Find coverage details<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Icon" name="LinkExternal01" size="{{ 20 }}" aria-label="Opens in a new tab" hint-size="20px,20px"></x-import></a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h3 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Health resources</h3>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Living healthy</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Understanding health care</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Managing health</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h3 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Account Related</h3>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Register</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Log in</a>
+</div>
+</div>
+</section>
+<section style="display:flex;flex-direction:column;gap:var(--spacing-3xl-px)">
+<h2 style="margin:0;font-size:20px;line-height:24px;font-weight:600;color:var(--colors-text-text-primary-900)">Claims</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(max(240px,calc((100% - 3 * var(--spacing-4xl-px)) / 4)),1fr));gap:var(--spacing-4xl-px) var(--spacing-4xl-px)">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h3 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">How to get paid</h3>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Claims, payment and reimbursement</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Electronic claims</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Pharmacy claims</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Dental claims</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h3 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Cost estimates and fee schedules</h3>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">How is cost calculated?</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h3 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Disputes and appeals</h3>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Learn how to file an appeal</a>
+</div>
+</div>
+</section>
+<section style="display:flex;flex-direction:column;gap:var(--spacing-3xl-px)">
+<h2 style="margin:0;font-size:20px;line-height:24px;font-weight:600;color:var(--colors-text-text-primary-900)">Resources</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(max(240px,calc((100% - 3 * var(--spacing-4xl-px)) / 4)),1fr));gap:var(--spacing-4xl-px) var(--spacing-4xl-px)">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h3 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Bill Payments</h3>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Pay my bill</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Automatic Billing</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h3 style="margin:0;font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Tools and forms</h3>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Forms and guides by region</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Provider search</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Administration tools</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:var(--spacing-sm-px);font-size:16px;line-height:24px;font-weight:600;color:var(--colors-text-text-brand-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-brand-secondary-700)">Individual Medicare</a>
+</div>
+</div>
+</section>
+</main>
+<footer style="background:var(--colors-background-bg-secondary);border-top:1px solid var(--colors-border-border-secondary);padding:var(--spacing-6xl-px) var(--spacing-none-px) var(--spacing-4xl-px)"><div style="max-width:var(--container-max-width);margin:0 auto;box-sizing:border-box;padding:var(--spacing-none-px) var(--container-gutter-px);display:flex;flex-direction:column;gap:var(--spacing-4xl-px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--spacing-4xl-px)">
+<div><span role="img" aria-label="Sample Health" style="display:block;height:64px;aspect-ratio:5/2;background:var(--colors-brand-600);-webkit-mask:url(../../assets/logo-footer.svg) left center/contain no-repeat;mask:url(../../assets/logo-footer.svg) left center/contain no-repeat"></span></div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Requests &amp; Issues</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Coverage Decisions &amp; Exceptions</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Appeals &amp; Grievances</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Disenrollment Rights &amp; Responsibilities</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Notices &amp; Disclosures</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Emergency &amp; Disaster Notifications</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Medicare National Coverage Determinations</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Patient Data Access</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Plan Information</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">About Sample Health</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">CMS Star Ratings</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Member Website Description</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Site Map</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Get Help</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Message Member Services</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Call Member Services</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Accessibility Help</a>
+</div>
+</div>
+<div style="display:flex;align-items:center;flex-wrap:wrap;gap:var(--spacing-xl-px)">
+<span style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)">Language Assistance:</span>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">English</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Español</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Other languages</a>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--spacing-xl-px);padding-top:var(--spacing-3xl-px);border-top:1px solid var(--colors-border-border-secondary)">
+<div style="display:flex;flex-wrap:wrap;gap:var(--spacing-3xl-px)">
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Privacy Policy</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Terms of Use</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Fraud, Waste &amp; Abuse</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Non-discrimination Notice</a>
+</div>
+<span style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)">© 2026 Sample Health. All rights reserved.</span>
+</div>
+</div></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const NS = "UntitledUIPRODesignSystem_380e88";
+class Component extends DCLogic {
+  componentDidMount() {
+    this.onResize = () => {
+      clearTimeout(this.rt);
+      this.rt = setTimeout(() => {
+        const compact = window.innerWidth < 1024;
+        if (compact !== this.compact) { this.compact = compact; this.forceUpdate(); }
+      }, 150);
+    };
+    window.addEventListener("resize", this.onResize);
+    if (!window[NS]) this.poll = setInterval(() => { if (window[NS]) { clearInterval(this.poll); this.forceUpdate(); } }, 100);
+  }
+  componentWillUnmount() { clearInterval(this.poll); window.removeEventListener("resize", this.onResize); clearTimeout(this.rt); }
+  renderVals() {
+    const UI = window[NS] || {};
+    const h = React.createElement;
+    if (this.compact === undefined) this.compact = window.innerWidth < 1024;
+    return {
+      nav: {
+        theme: "brand",
+        contain: "var(--container-max-width)",
+        compact: this.compact,
+        logoSrc: "../../assets/logo-nav-white.png",
+        items: [{ label: "Item 1" }, { label: "Item 2" }, { label: "Item Group 3", children: [] }, { label: "Item Group 4", children: [] }, { label: "Item 5" }, { label: "Item 6" }, { label: "Item 7" }],
+        utility: {
+          left: [{ label: "United States - EN", icon: "Globe01", menu: true }],
+          right: [{ label: "1-800-123-4567 (TTY: 711)", icon: "Phone01" }, { label: "support@sampleHealth.com", icon: "Mail01", href: "#" }, { label: "Help Center", icon: "HelpCircle", href: "#" }]
+        },
+        account: { name: "Caitlyn King", email: "caitlyn.king@example.com", initials: "CK", showLabel: true, menu: [{ label: "Profile" }, { label: "Sign out" }] }
+      },
+      helpIcon: UI.Icon ? h(UI.Icon, { name: "HelpCircle", size: 20, "aria-hidden": "true" }) : null
+    };
+  }
+}
+</script>
+</body>
+</html>

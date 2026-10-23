@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Knowledge base" description="Help center: hero search, topic cards and footer" -->
+<helmet><script src="./ds-base.js"></script><style>body{margin:0;background:var(--colors-background-bg-secondary)}</style></helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column;background:var(--colors-background-bg-secondary);font-family:var(--font-body)">
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.TopNav" dc-props="{{ nav }}" hint-size="100%,100px"></x-import>
+<main style="flex:1;width:100%;max-width:var(--container-max-width);margin:0 auto;box-sizing:border-box;padding:var(--spacing-4xl-px) var(--container-gutter-px) var(--spacing-5xl-px);display:flex;flex-direction:column;gap:var(--spacing-4xl-px)">
+<section style="position:relative;overflow:hidden;border-radius:var(--radius-2xl-px);min-height:360px;display:flex;align-items:center;justify-content:flex-start;padding:var(--spacing-6xl-px) var(--spacing-5xl-px);box-sizing:border-box;background:var(--colors-brand-900)">
+<img src="../../assets/hero-knowledge-base.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top">
+<div aria-hidden="true" style="position:absolute;inset:0;background:var(--colors-brand-900);opacity:0.7"></div>
+<div style="position:relative;width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-3xl-px)">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-md-px)">
+<p style="margin:0;font-size:16px;line-height:24px;font-weight:400;color:var(--colors-base-white)">Hello there</p>
+<h1 style="margin:0;font-size:36px;line-height:44px;font-weight:600;letter-spacing:-0.02em;color:var(--colors-base-white);text-wrap:balance">Welcome to Knowledge Base</h1>
+</div>
+<form role="search" onSubmit="{{ onSearch }}" style="position:relative;width:100%;box-sizing:border-box;display:flex;align-items:center;gap:var(--spacing-md-px);padding:var(--spacing-md-px) var(--spacing-md-px) var(--spacing-md-px) var(--spacing-xl-px);border-radius:var(--radius-lg-px);background:var(--colors-background-bg-primary);box-shadow:0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)">
+<sc-if value="{{ searchFocus }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position:absolute;inset:0;border-radius:var(--radius-lg-px);pointer-events:none;box-shadow:0 0 6px 1px var(--colors-brand-50), inset 0 0 0 1px var(--colors-border-border-brand)"></span></sc-if>
+<span style="display:inline-flex;flex-shrink:0;color:var(--colors-text-text-placeholder)">{{ searchIcon }}</span>
+<input type="search" onFocus="{{ onSearchFocus }}" onBlur="{{ onSearchBlur }}" aria-label="Search the knowledge base" placeholder="Search for information related to topics like benefits, claims, doctors, prescriptions, and more" style="flex:1;min-width:0;border:none;outline:none;background:transparent;padding:var(--spacing-none-px);font-family:var(--font-body);font-size:16px;line-height:24px;font-weight:400;color:var(--colors-text-text-primary-900);text-overflow:ellipsis">
+<x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Button" hierarchy="primary" size="lg" type="submit" hint-size="100px,48px">Search</x-import>
+</form>
+</div>
+</section>
+<section style="display:flex;flex-direction:column;gap:var(--spacing-xl-px)">
+<h2 style="margin:0;font-size:24px;line-height:28px;font-weight:600;color:var(--colors-text-text-primary-900)">Topics</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(max(280px,calc((100% - 2 * var(--spacing-xl-px)) / 3)),1fr));gap:var(--spacing-xl-px)">
+<sc-for list="{{ topics }}" as="t" hint-placeholder-count="10">
+<a href="#" style="border:1px solid var(--colors-border-border-secondary);border-radius:var(--radius-xl-px);background:var(--colors-background-bg-primary);box-shadow:0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs);box-sizing:border-box;padding:var(--spacing-xl-px);display:flex;align-items:flex-start;gap:var(--spacing-lg-px);text-decoration:none;height:100%" style-hover="border-color:var(--colors-border-border-brand)"><x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.FeaturedIcon" size="sm" color="brand" shape="circle" hint-size="32px,32px"><x-import component-from-global-scope="UntitledUIPRODesignSystem_380e88.Icon" name="{{ t.icon }}" size="{{ 16 }}" aria-hidden="true" hint-size="16px,16px"></x-import></x-import><div style="display:flex;flex-direction:column;gap:var(--spacing-xs-px);min-width:0"><span style="font-size:16px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">{{ t.title }}</span><span style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-wrap:pretty">{{ t.body }}</span></div></a>
+</sc-for>
+</div>
+</section>
+</main>
+<footer style="background:var(--colors-background-bg-secondary);border-top:1px solid var(--colors-border-border-secondary);padding:var(--spacing-6xl-px) var(--spacing-none-px) var(--spacing-4xl-px)"><div style="max-width:var(--container-max-width);margin:0 auto;box-sizing:border-box;padding:var(--spacing-none-px) var(--container-gutter-px);display:flex;flex-direction:column;gap:var(--spacing-4xl-px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--spacing-4xl-px)">
+<div><span role="img" aria-label="Sample Health" style="display:block;height:64px;aspect-ratio:5/2;background:var(--colors-brand-600);-webkit-mask:url(../../assets/logo-footer.svg) left center/contain no-repeat;mask:url(../../assets/logo-footer.svg) left center/contain no-repeat"></span></div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Requests &amp; Issues</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Coverage Decisions &amp; Exceptions</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Appeals &amp; Grievances</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Disenrollment Rights &amp; Responsibilities</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Notices &amp; Disclosures</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Emergency &amp; Disaster Notifications</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Medicare National Coverage Determinations</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Patient Data Access</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Plan Information</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">About Sample Health</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">CMS Star Ratings</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Member Website Description</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Site Map</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--spacing-lg-px)">
+<h2 style="margin:0;font-size:14px;line-height:20px;font-weight:600;color:var(--colors-text-text-primary-900)">Get Help</h2>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Message Member Services</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Call Member Services</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Accessibility Help</a>
+</div>
+</div>
+<div style="display:flex;align-items:center;flex-wrap:wrap;gap:var(--spacing-xl-px)">
+<span style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)">Language Assistance:</span>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">English</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Español</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Other languages</a>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--spacing-xl-px);padding-top:var(--spacing-3xl-px);border-top:1px solid var(--colors-border-border-secondary)">
+<div style="display:flex;flex-wrap:wrap;gap:var(--spacing-3xl-px)">
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Privacy Policy</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Terms of Use</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Fraud, Waste &amp; Abuse</a>
+<a href="#" style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600);text-decoration:none" style-hover="text-decoration:underline;color:var(--colors-text-text-secondary-700)">Non-discrimination Notice</a>
+</div>
+<span style="font-size:14px;line-height:20px;font-weight:400;color:var(--colors-text-text-tertiary-600)">© 2026 Sample Health. All rights reserved.</span>
+</div>
+</div></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const NS = "UntitledUIPRODesignSystem_380e88";
+const TOPICS = [
+  { icon: "Placeholder", title: "Claims", body: "Claim forms, submission steps, status tracking, and reimbursement information." },
+  { icon: "Umbrella01", title: "Coverage", body: "In-network benefits, excluded services, and coverage limits for your current plan." },
+  { icon: "Plus", title: "Find Care", body: "Provider search tools, in-network lists, and how to change your primary care physician." },
+  { icon: "Placeholder", title: "Prescription Benefits", body: "Drug formularies, pharmacy locator, tier pricing, and authorization requests." },
+  { icon: "CurrencyDollar", title: "Costs & Copays", body: "Deductible progress, copay schedules, billing statements, and payment history." },
+  { icon: "Eye", title: "Dental & Vision", body: "Covered procedures, network dentists and optometrists, and annual benefit limits." },
+  { icon: "User01", title: "Account Settings", body: "Personal details, dependent management, communication preferences & login security." },
+  { icon: "FaceFrown", title: "Mental Health", body: "Therapist directories, covered sessions, crisis helplines, and behavioral health." },
+  { icon: "File04", title: "Plan Renewal", body: "Enrollment windows, plan comparison tools, and qualifying life event changes." },
+  { icon: "Placeholder", title: "Billing & Payments", body: "Outstanding balances, autopay setup, payment plans, and explanation of benefits." }
+];
+class Component extends DCLogic {
+  state = { searchFocus: false };
+  componentDidMount() {
+    this.onResize = () => {
+      clearTimeout(this.rt);
+      this.rt = setTimeout(() => {
+        const compact = window.innerWidth < 1024;
+        if (compact !== this.compact) { this.compact = compact; this.forceUpdate(); }
+      }, 150);
+    };
+    window.addEventListener("resize", this.onResize);
+    if (!window[NS]) this.poll = setInterval(() => { if (window[NS]) { clearInterval(this.poll); this.forceUpdate(); } }, 100);
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this.onResize); clearInterval(this.poll); clearTimeout(this.rt); }
+  renderVals() {
+    const UI = window[NS] || {};
+    if (this.compact === undefined) this.compact = window.innerWidth < 1024;
+    return {
+      nav: {
+        theme: "brand",
+        contain: "var(--container-max-width)",
+        compact: this.compact,
+        logoSrc: "../../assets/logo-nav-white.png",
+        items: [
+          { label: "Home" },
+          { label: "Coverage & Benefits" },
+          { label: "Find Care" },
+          { label: "Claims & Approvals", children: [] },
+          { label: "Health & Wellness" },
+          { label: "Resources", children: [] }
+        ],
+        current: "Home",
+        utility: { right: [{ label: "Support Center", icon: "HelpCircle" }] },
+        account: { name: "Lynnell Merv", email: "Lynnell.Merv1950@gmail.com", initials: "LM", showLabel: true, menu: [{ label: "Profile" }, { label: "Sign out" }] }
+      },
+      searchIcon: UI.Icon ? React.createElement(UI.Icon, { name: "SearchMd", size: 20, "aria-hidden": "true" }) : null,
+      onSearch: (e) => e.preventDefault(),
+      searchFocus: this.state.searchFocus,
+      onSearchFocus: () => this.setState({ searchFocus: true }),
+      onSearchBlur: () => this.setState({ searchFocus: false }),
+      topics: TOPICS
+    };
+  }
+}
+</script>
+</body>
+</html>

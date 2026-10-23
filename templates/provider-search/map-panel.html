@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Provider map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.0.22/leaflet-maplibre-gl.js"></script>
+<link rel="stylesheet" href="../../tokens/fonts.css">
+<link rel="stylesheet" href="../../tokens/fig-tokens.css">
+<link rel="stylesheet" href="../../tokens/scale.css">
+<link rel="stylesheet" href="../../tokens/brand-blue.css">
+<style>
+  html, body { margin: 0; height: 100%; background: var(--colors-gray-light-mode-100); }
+  #map { position: absolute; inset: 0; }
+  :focus-visible { outline: 2px solid var(--colors-brand-600); outline-offset: 2px; }
+  .leaflet-container { font-family: var(--font-body, Inter), sans-serif; background: var(--colors-gray-light-mode-100); }
+  .leaflet-control-attribution { font-size: 10px; }
+  .sh-pin {
+    display: block;
+    width: 16px; height: 16px; border-radius: 999px;
+    background: var(--colors-brand-600);
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(16, 24, 40, 0.28);
+    cursor: pointer; transition: transform 120ms ease, background 120ms ease;
+  }
+  .sh-pin.is-selected { background: var(--colors-brand-800); transform: scale(1.45); }
+  .sh-pin:hover { background: var(--colors-brand-700); }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  var map = L.map('map', { zoomControl: true, scrollWheelZoom: false, attributionControl: true })
+    .setView([30.2672, -97.7431], 12);
+  L.maplibreGL({
+    style: 'https://tiles.openfreemap.org/styles/liberty',
+    preserveDrawingBuffer: true,
+    attribution: '<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
+  }).addTo(map);
+
+  var layer = L.layerGroup().addTo(map);
+  var markers = {};
+  var current = [];
+  var selected = null;
+
+  function icon(n, on) {
+    return L.divIcon({
+      className: '',
+      html: '<div class="sh-pin' + (on ? ' is-selected' : '') + '"></div>',
+      iconSize: [16, 16],
+      iconAnchor: [8, 8]
+    });
+  }
+
+  function render(items, keepView) {
+    layer.clearLayers();
+    markers = {};
+    current = items || [];
+    var pts = [];
+    current.forEach(function (it) {
+      var m = L.marker([it.lat, it.lng], {
+        icon: icon(it.n, it.id === selected),
+        title: it.label,
+        keyboard: true,
+        alt: it.label
+      });
+      m.on('click', function () {
+        selected = it.id;
+        refresh();
+        parent.postMessage({ source: 'sh-map', type: 'pinClick', id: it.id }, '*');
+      });
+      m.addTo(layer);
+      markers[it.id] = m;
+      pts.push([it.lat, it.lng]);
+    });
+    if (pts.length && !keepView) map.fitBounds(pts, { padding: [48, 48], maxZoom: 14 });
+  }
+
+  function refresh() {
+    current.forEach(function (it) {
+      var m = markers[it.id];
+      if (m) m.setIcon(icon(it.n, it.id === selected));
+    });
+  }
+
+  window.addEventListener('message', function (e) {
+    var d = e.data;
+    if (!d || d.source !== 'sh-host') return;
+    if (d.type === 'markers') {
+      var same = current.length === (d.items || []).length && current.every(function (it, i) {
+        return d.items[i] && d.items[i].id === it.id && d.items[i].n === it.n;
+      });
+      selected = d.selected !== undefined ? d.selected : selected;
+      render(d.items, same);
+      if (same) refresh();
+    } else if (d.type === 'select') {
+      selected = d.id;
+      refresh();
+      var m = markers[d.id];
+      if (m) map.panTo(m.getLatLng(), { animate: true });
+    } else if (d.type === 'invalidate') {
+      map.invalidateSize();
+    }
+  });
+
+  parent.postMessage({ source: 'sh-map', type: 'ready' }, '*');
+</script>
+</body>
+</html>
